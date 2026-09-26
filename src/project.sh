@@ -1,6 +1,5 @@
 #!/bin/sh
-# GlAIpnir - AI Agents Sandbox - Manage a secure, isolated environment for
-# running agents.
+# project - description of the project
 # Copyright (C) 2026  val4oss <val4oss@pm.me>
 # 
 # This program is free software: you can redistribute it and/or modify
