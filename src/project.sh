@@ -161,7 +161,7 @@ Actions:
   action        Action to defined
 
 Options:
-  --conf       Defined conf file path for building the image. See Notes.
+  --conf       Defined conf file path.
 
 Notes:
   - Some notes of the projec."
@@ -217,7 +217,7 @@ while [ $# -gt 0 ]; do
         help|--help|-h)          usage;                     exit "${SUCCESS}" ;;
         quiet|--quiet|-q)        QUIET=1;                   shift 1           ;;
         version|--version)       print_version;             exit "${SUCCESS}" ;;
-        action)                  ACTION="action";           shift 1           ;;            
+        action)                  ACTION="action";           shift 1           ;;
         verbose|--verbose|-v)    VERBOSE=1;                 shift 1           ;;
         -vv)                     VERBOSE=1; DEBUG=1;        shift 1           ;;
         --conf)
