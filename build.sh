@@ -143,7 +143,7 @@ build_main() {
 
         # rpm forbids '-' in Version and sorts '~' below the release; OCI tags
         # forbid '~'. Hence two spellings of the same version.
-        IMGVERSION="$(echo "${VERSION}" | tr '~' '-')"
+        VERSION="$(echo "${VERSION}" | tr '~' '-')"
 
         _build_bin_p="${BUILD_D}${BINDIR}/${PRJ_ID}"
         echo "Building ${_build_bin_p} ..."
@@ -182,7 +182,7 @@ build_main() {
         sed \
             -e "s|^DATA_D=.*|DATA_D=\"${BUILD_D}${PKGDATADIR}\"|"   \
             -e "/^ROOT_D=.*/d"                                      \
-            -e "s|^IMG_TAG=.*|IMG_TAG=\"${IMGVERSION}\"|"           \
+            -e "s|^VERSION=.*|VERSION=\"${VERSION}\"|"           \
             "${_build_bin_p}" > "${_build_bin_p}.tmp" || {
                 echo "Failed to update variables from ${_build_bin_p}"
                 _rc="${FAILURE}"; break
